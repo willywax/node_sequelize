@@ -1,5 +1,5 @@
-##SetUp Project Structure 
+### SetUp Project Structure 
 
-##SetUp PostreSql 
+## SetUp PostreSql 
 
-##SetUp Sequalize 
+## SetUp Sequalize 
