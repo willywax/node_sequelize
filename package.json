@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon --exec babel-node ./api/index.js",
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write"
+    "lint:fix": "prettier-eslint '**/*.js' --write",
+    "build": "babel api -d build",
+    "start": "npm run build && node ./build/index.js"
   },
   "husky": {
     "hooks": {
@@ -40,11 +42,15 @@
     "@babel/register": "^7.5.5",
     "@babel/runtime": "^7.5.5",
     "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^6.2.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.4",
     "lint-staged": "^9.2.3",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
     "prettier-eslint": "^9.0.0",
     "prettier-eslint-cli": "^5.0.0"
   }

@@ -1,4 +1,4 @@
-export default class Util {
+class Util {
   constructor() {
     this.status = null;
     this.message = null;
@@ -19,20 +19,26 @@ export default class Util {
     this.type = 'Error';
   }
 
-  send(res) {
-    const result = {
+  result() {
+    let result = {
+      statusCode: this.statusCode,
       status: this.type,
       message: this.message,
       data: this.data,
     };
 
-    if (this.type === 'success') {
-      return res.status(this.statusCode).json(result);
+    if (this.type === 'Success') {
+      return result;
     }
 
-    return res.status(this.statusCode).json({
+    result = {
+      statusCode: this.statusCode,
       status: this.type,
       message: this.message,
-    });
+    };
+
+    return result;
   }
 }
+
+export default new Util();

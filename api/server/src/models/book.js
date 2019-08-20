@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const Book = sequelize.define('Book', {
+  const Books = sequelize.define('Books', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,5 +13,5 @@ export default (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  return Book;
+  return Books;
 };
